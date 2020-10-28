@@ -1,0 +1,14 @@
+D:\Documentos\FCFM\Materias\MAD\Proyecto\main\main\obj\Debug\main.vbprojAssemblyReference.cache
+D:\Documentos\FCFM\Materias\MAD\Proyecto\main\main\obj\Debug\main.Form1.resources
+D:\Documentos\FCFM\Materias\MAD\Proyecto\main\main\obj\Debug\main.Resources.resources
+D:\Documentos\FCFM\Materias\MAD\Proyecto\main\main\obj\Debug\main.vbproj.GenerateResource.cache
+D:\Documentos\FCFM\Materias\MAD\Proyecto\main\main\obj\Debug\main.vbproj.CoreCompileInputs.cache
+D:\Documentos\FCFM\Materias\MAD\Proyecto\main\main\bin\Debug\main.exe.config
+D:\Documentos\FCFM\Materias\MAD\Proyecto\main\main\bin\Debug\main.exe
+D:\Documentos\FCFM\Materias\MAD\Proyecto\main\main\bin\Debug\main.pdb
+D:\Documentos\FCFM\Materias\MAD\Proyecto\main\main\bin\Debug\main.xml
+D:\Documentos\FCFM\Materias\MAD\Proyecto\main\main\obj\Debug\main.exe
+D:\Documentos\FCFM\Materias\MAD\Proyecto\main\main\obj\Debug\main.xml
+D:\Documentos\FCFM\Materias\MAD\Proyecto\main\main\obj\Debug\main.pdb
+D:\Documentos\FCFM\Materias\MAD\Proyecto\main\main\obj\Debug\main.Form2.resources
+D:\Documentos\FCFM\Materias\MAD\Proyecto\main\main\obj\Debug\main.Form3.resources
