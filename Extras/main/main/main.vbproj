@@ -75,35 +75,65 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EnlaceBD.vb" />
-    <Compile Include="Form1.vb">
+    <Compile Include="01. LogIn.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="01. LogIn.Designer.vb">
+      <DependentUpon>01. LogIn.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <Compile Include="02. MEmpleado.Designer.vb">
+      <DependentUpon>02. MEmpleado.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form2.vb">
+    <Compile Include="02. MEmpleado.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.vb">
-      <DependentUpon>Form3.vb</DependentUpon>
+    <Compile Include="03. Datos.Designer.vb">
+      <DependentUpon>03. Datos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form3.vb">
+    <Compile Include="03. Datos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form4.Designer.vb">
-      <DependentUpon>Form4.vb</DependentUpon>
+    <Compile Include="04. Empresa.Designer.vb">
+      <DependentUpon>04. Empresa.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form4.vb">
+    <Compile Include="04. Empresa.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form5.Designer.vb">
-      <DependentUpon>Form5.vb</DependentUpon>
+    <Compile Include="05. Departamento.Designer.vb">
+      <DependentUpon>05. Departamento.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form5.vb">
+    <Compile Include="05. Departamento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="06. Percepcion.Designer.vb">
+      <DependentUpon>06. Percepcion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="06. Percepcion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="07. Deduccion.Designer.vb">
+      <DependentUpon>07. Deduccion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="07. Deduccion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="08. Puestos.Designer.vb">
+      <DependentUpon>08. Puestos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="08. Puestos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="09. RNominaGeneral.Designer.vb">
+      <DependentUpon>09. RNominaGeneral.vb</DependentUpon>
+    </Compile>
+    <Compile Include="09. RNominaGeneral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="10. RHeadcounter.Designer.vb">
+      <DependentUpon>10. RHeadcounter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="10. RHeadcounter.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Funciones.vb" />
@@ -124,20 +154,35 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="01. LogIn.resx">
+      <DependentUpon>01. LogIn.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <EmbeddedResource Include="02. MEmpleado.resx">
+      <DependentUpon>02. MEmpleado.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.vb</DependentUpon>
+    <EmbeddedResource Include="03. Datos.resx">
+      <DependentUpon>03. Datos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
-      <DependentUpon>Form4.vb</DependentUpon>
+    <EmbeddedResource Include="04. Empresa.resx">
+      <DependentUpon>04. Empresa.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form5.resx">
-      <DependentUpon>Form5.vb</DependentUpon>
+    <EmbeddedResource Include="05. Departamento.resx">
+      <DependentUpon>05. Departamento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="06. Percepcion.resx">
+      <DependentUpon>06. Percepcion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="07. Deduccion.resx">
+      <DependentUpon>07. Deduccion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="08. Puestos.resx">
+      <DependentUpon>08. Puestos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="09. RNominaGeneral.resx">
+      <DependentUpon>09. RNominaGeneral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="10. RHeadcounter.resx">
+      <DependentUpon>10. RHeadcounter.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
