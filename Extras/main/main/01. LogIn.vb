@@ -1,8 +1,18 @@
 ﻿Public Class LogIn
     'if (check 1 y 2 hasnt changed) Form2.Show() as below
+    Public Temp As EnlaceBD
+
+
     Private Sub btnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
-        Me.Hide()
-        Form2.Show()
+
+        Temp = New EnlaceBD
+
+        If (Temp.ValidaUser(TBUser.Text.Trim(), TBPass.Text.Trim())) Then
+            Me.Hide()
+            Form2.Show()
+        Else
+            MsgBox("Usuario o Contraseña no encontrados!")
+        End If
 
     End Sub
 
@@ -21,5 +31,13 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+    Private Sub TBPass_TextChanged(sender As Object, e As EventArgs) Handles TBPass.TextChanged
+
+    End Sub
+
 End Class
+
+
+
 

@@ -27,7 +27,7 @@ Partial Class LogIn
         Me.LabelUser = New System.Windows.Forms.Label()
         Me.TBUser = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TBPass = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'btnIngresar
@@ -65,25 +65,25 @@ Partial Class LogIn
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Contraseña:"
         '
-        'TextBox1
+        'TBPass
         '
-        Me.TextBox1.Location = New System.Drawing.Point(146, 96)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(148, 20)
-        Me.TextBox1.TabIndex = 6
+        Me.TBPass.Location = New System.Drawing.Point(146, 96)
+        Me.TBPass.Name = "TBPass"
+        Me.TBPass.Size = New System.Drawing.Size(148, 20)
+        Me.TBPass.TabIndex = 6
         '
-        'Form1
+        'LogIn
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(347, 218)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TBPass)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TBUser)
         Me.Controls.Add(Me.LabelUser)
         Me.Controls.Add(Me.btnIngresar)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "Form1"
+        Me.Name = "LogIn"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Ingreso"
         Me.ResumeLayout(False)
@@ -95,5 +95,5 @@ Partial Class LogIn
     Friend WithEvents LabelUser As Label
     Friend WithEvents TBUser As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TBPass As TextBox
 End Class

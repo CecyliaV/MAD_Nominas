@@ -136,6 +136,12 @@
     <Compile Include="10. RHeadcounter.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="11. MGerente.Designer.vb">
+      <DependentUpon>11. MGerente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="11. MGerente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Funciones.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="10. RHeadcounter.resx">
       <DependentUpon>10. RHeadcounter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="11. MGerente.resx">
+      <DependentUpon>11. MGerente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

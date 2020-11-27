@@ -134,6 +134,38 @@ Public Class EnlaceBD
         End Try
         Return estado
     End Function
+
+    Public Function ValidaUser(ByVal User As String, ByVal Pass As String) As Boolean
+        Dim query As String
+        Dim data As New DataTable
+        Dim fnd As Boolean = True
+        Try
+            conectar()
+            comandosql = New SqlCommand("sp_CheckPassword", conexion)
+            comandosql.CommandType = CommandType.StoredProcedure
+
+            Dim parametro1 As SqlParameter = comandosql.Parameters.Add("@Nombre", SqlDbType.VarChar, 20)
+            parametro1.Value = User
+            Dim parametro2 As SqlParameter = comandosql.Parameters.Add("@Pass", SqlDbType.VarChar, 20)
+            parametro2.Value = Pass
+
+            adaptador.SelectCommand = comandosql
+            adaptador.Fill(data)
+
+            If (data.Rows.Count = 1) Then
+                fnd = True
+            Else
+                fnd = False
+            End If
+
+        Catch ex As SqlException
+            fnd = False
+        Finally
+            desconectar()
+        End Try
+
+        Return fnd
+    End Function
     Public Function AgregaInventario(ByVal dFecha As Date, ByVal strCliente As String, ByVal strNoParte As String,
                                      ByVal strProducto As String, ByVal iPiezasAlm As Integer, ByVal iPiezasCuar As _
                                      Integer, ByVal iPiezasTot As Integer) As Boolean
