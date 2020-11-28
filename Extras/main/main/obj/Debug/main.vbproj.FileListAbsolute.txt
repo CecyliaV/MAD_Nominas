@@ -30,7 +30,6 @@ D:\Facultad\Sexto Semestre\MAD\MAD_VB_Proyecto_v2\MAD_Nominas-main\Extras\main\m
 D:\Facultad\Sexto Semestre\MAD\MAD_VB_Proyecto_v2\MAD_Nominas-main\Extras\main\main\bin\Debug\main.exe
 D:\Facultad\Sexto Semestre\MAD\MAD_VB_Proyecto_v2\MAD_Nominas-main\Extras\main\main\bin\Debug\main.pdb
 D:\Facultad\Sexto Semestre\MAD\MAD_VB_Proyecto_v2\MAD_Nominas-main\Extras\main\main\bin\Debug\main.xml
-D:\Facultad\Sexto Semestre\MAD\MAD_VB_Proyecto_v2\MAD_Nominas-main\Extras\main\main\obj\Debug\main.vbprojAssemblyReference.cache
 D:\Facultad\Sexto Semestre\MAD\MAD_VB_Proyecto_v2\MAD_Nominas-main\Extras\main\main\obj\Debug\main.LogIn.resources
 D:\Facultad\Sexto Semestre\MAD\MAD_VB_Proyecto_v2\MAD_Nominas-main\Extras\main\main\obj\Debug\main.Form2.resources
 D:\Facultad\Sexto Semestre\MAD\MAD_VB_Proyecto_v2\MAD_Nominas-main\Extras\main\main\obj\Debug\main.Form3.resources

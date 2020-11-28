@@ -3,6 +3,9 @@ IF EXISTS(SELECT 1 FROM sysobjects WHERE name = 'sp_Empleado' AND type = 'P')	  
 DROP PROCEDURE sp_Empleado;
 go
 
+USE BDNomina
+go
+
 CREATE PROCEDURE sp_Empleado
 (
 @Opc				CHAR(1),
@@ -198,17 +201,89 @@ BEGIN
 END
 
 --Checar Password--
-IF EXISTS(SELECT 1 FROM sysobjects WHERE name = 'sp_CheckPassword' AND type = 'P')	  --Tipo procedure
-DROP PROCEDURE sp_CheckPassword;
+IF EXISTS(SELECT 1 FROM sysobjects WHERE name = 'sp_CheckAdmin' AND type = 'P')	  --Tipo procedure
+DROP PROCEDURE sp_CheckAdmin;
 go
 
-CREATE PROCEDURE sp_CheckPassword
+CREATE PROCEDURE sp_CheckAdmin
 (
    @Nombre			VARCHAR(20),
    @Pass				VARCHAR(20)
 )
 AS
 BEGIN
-select * from Empleado where Nombres = @Nombre and Contraseña = @Pass
+select * from Empleado where Nombres = @Nombre and Contraseña = @Pass and Gerente = 1 
 
+END
+
+--Checar Gerentes para el CB empresa--
+IF EXISTS(SELECT 1 FROM sysobjects WHERE name = 'sp_GetNameGer' AND type = 'P')	  --Tipo procedure
+DROP PROCEDURE sp_GetNameGer;
+go
+
+CREATE PROCEDURE sp_GetNameGer
+AS
+BEGIN
+select Nombres from Empleado where Gerente = 1
+
+END
+
+--Checar SuperUsuario--
+IF EXISTS(SELECT 1 FROM sysobjects WHERE name = 'sp_CheckSuperUser' AND type = 'P')	  --Tipo procedure
+DROP PROCEDURE sp_CheckSuperUser;
+go
+
+CREATE PROCEDURE sp_CheckSuperUser
+(
+   @Id				bigint
+)
+AS
+BEGIN
+select * from Empleado where NoEmpleado <= 1000 and NoEmpleado = @Id
+END
+
+ --GetGerenteMenu--
+IF EXISTS(SELECT 1 FROM sysobjects WHERE name = 'sp_GetGerenteMenu' AND type = 'P')	  --Tipo procedure
+DROP PROCEDURE sp_GetGerenteMenu;
+go
+
+CREATE PROCEDURE sp_GetGerenteMenu
+(
+   @Id				bigint
+)
+AS
+BEGIN
+	select IdNomina, Nombres, IdEmpresa, IdDepto, IdPuesto from Empleado where @Id = NoEmpleado
+END
+
+
+--Conseguir un Id--
+IF EXISTS(SELECT 1 FROM sysobjects WHERE name = 'sp_GetIdAny' AND type = 'P')	  --Tipo procedure
+DROP PROCEDURE sp_GetIdAny;
+go
+
+CREATE PROCEDURE sp_GetIdAny
+(
+   @Nombre			varchar(20),
+   @Pass				varchar(20)
+)
+AS
+BEGIN
+	select NoEmpleado 'id' from Empleado where Nombres = @Nombre and Contraseña = @Pass
+END
+
+
+ --Info del Gerente--
+IF EXISTS(SELECT 1 FROM sysobjects WHERE name = 'sp_GetGerenteInfo' AND type = 'P')	  --Tipo procedure
+DROP PROCEDURE sp_GetGerenteInfo;
+go
+
+CREATE PROCEDURE sp_GetGerenteInfo
+(
+   @id			bigint
+)
+AS
+BEGIN
+	
+	select NoEmpleado 'id', Nombres 'Nombre', IdEmpresa 'Empresa', IdDepto 'Departamento', IdPuesto 'Puesto' from Empleado where NoEmpleado = @id
 END

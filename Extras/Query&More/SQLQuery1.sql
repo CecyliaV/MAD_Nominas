@@ -205,9 +205,9 @@ CREATE TABLE EmprPue (
 
 --ALTERS----------------------------------------------
 
-ALTER TABLE Empleado ADD CONSTRAINT FK_Empleado_Puesto FOREIGN KEY (IdPuesto) REFERENCES Puesto(IdPuesto)
 ALTER TABLE Empleado ADD CONSTRAINT FK_Empleado_Empresa FOREIGN KEY (IdEmpresa) REFERENCES Empresa(IdEmpresa)
-ALTER TABLE Empleado ADD CONSTRAINT FK_Empleado_Departamento FOREIGN KEY (IdDepto) REFERENCES Empresa(IdEmpresa)
+ALTER TABLE Empleado ADD CONSTRAINT FK_Empleado_Departamento FOREIGN KEY (IdDepto) REFERENCES Departamento(IdDepartamento)
+ALTER TABLE Empleado ADD CONSTRAINT FK_Empleado_Puesto FOREIGN KEY (IdPuesto) REFERENCES Puesto(IdPuesto)
 ALTER TABLE Empleado ADD CONSTRAINT FK_Empleado_Nomina FOREIGN KEY (IdNomina) REFERENCES Nomina(IdNomina)	
 
 ALTER TABLE Empleado DROP CONSTRAINT FK_Empleado_Empresa;
@@ -234,12 +234,14 @@ ALTER TABLE EmprDep DROP CONSTRAINT FK_EmprDep_Departamento;
 ALTER TABLE EmprPue DROP CONSTRAINT FK_EmprPue_Departamento;
 
 
+--SU--
+exec sp_Empleado 'I'	, null, 'SU', 'Admin', 'contra123', '00000000000', '0000000000000', 'Banco', '123456789', 'admin@gmail.com', '8181818181', 'Super', 'Usuario' , '00000000000000000', null, null, null, null, ' - ', 0, ' - ',' - ',' - ', ' - ', 1
 
 exec sp_Empleado 'I'	, null, 'pingu', 'emiliano', 'contra123', '727956089', '72795608040', 'Banorte', '123456789', 'smt@gmail.com', '8111198227', 'Leal', 'Dmz' , 'LEDE980118HNLLMM01', null, null, null, null, 'Parras', 231, 'Mitras','Mty','Nuevo Leon', '64460', 1
-exec sp_Empleado 'I'	, null, 'cecy', 'cecy', 'contra123', '727956089', '72795608040', 'Banorte', '123456789', 'smt@gmail.com', '8111198227', 'villareal', 'Franco' , 'CECY980118HNLLMM01', 0, 0, 0, 0, 'smt', 231, 'Vista hermosa','Mty','Nuevo Leon', '64460', 1  
-exec sp_Empleado 'D', 1020, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null 
+exec sp_Empleado 'I'	, null, 'cecy', 'cecy', 'contra123', '727956089', '72795608040', 'Banorte', '123456789', 'smt@gmail.com', '8111198227', 'villareal', 'Franco' , 'CECY980118HNLLMM01', null, null, null, null, 'smt', 231, 'Vista hermosa','Mty','Nuevo Leon', '64460', 0  
+exec sp_Empleado 'D', 1010, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null 
 
-exec sp_Empresa 'I', null, 'amazon', 'money', 'smwhere', 'smt', '72795608040', '20200118', 'amazon@gmail.com', '11111111111', 0, 0  
+exec sp_Empresa 'I', null, 'amazon', 'money', 'smwhere', 'smt', '72795608040', '20200118', 'amazon@gmail.com', '11111111111', null, null  
 exec sp_Empresa 'D', 100, null, null, null, null, null, null, null, null, null, null
 
 exec sp_Departamento 'I', null, 'Cocina', '1000.00', 1000
@@ -252,8 +254,14 @@ exec sp_Nomina 'I', null, 100.00, 950.00, '20200519', 0, 0, 0
 exec sp_Nomina 'D', 101, null, null, null, null
 
 
+exec sp_CheckSuperUser 1000
+
+exec sp_GetIdAny 'admin', 'contra123'
+
+exec sp_GetGerenteInfo 1000
+
 select * from Empleado
-select * from Empresa
+select * from Empresa 
 select * from Departamento
 select * from Puesto
 select * from Nomina

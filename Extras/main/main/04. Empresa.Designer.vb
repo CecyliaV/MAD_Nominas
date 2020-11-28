@@ -23,17 +23,16 @@ Partial Class EmpresaWnd
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EmpresaWnd))
-        Me.TextBox23 = New System.Windows.Forms.TextBox()
+        Me.DomEmpr = New System.Windows.Forms.TextBox()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.TBRSocial = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.TBRPatronal = New System.Windows.Forms.TextBox()
+        Me.TBNomEmpr = New System.Windows.Forms.TextBox()
+        Me.TBEmail = New System.Windows.Forms.TextBox()
+        Me.TBRFC = New System.Windows.Forms.TextBox()
+        Me.TelEmpr = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -41,19 +40,19 @@ Partial Class EmpresaWnd
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.CBFrecPago = New System.Windows.Forms.ComboBox()
+        Me.CBGerente = New System.Windows.Forms.ComboBox()
+        Me.OkayEmpresa = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.DTPEmpresa = New System.Windows.Forms.DateTimePicker()
         Me.SuspendLayout()
         '
-        'TextBox23
+        'DomEmpr
         '
-        Me.TextBox23.Location = New System.Drawing.Point(130, 97)
-        Me.TextBox23.Name = "TextBox23"
-        Me.TextBox23.ReadOnly = True
-        Me.TextBox23.Size = New System.Drawing.Size(164, 20)
-        Me.TextBox23.TabIndex = 87
+        Me.DomEmpr.Location = New System.Drawing.Point(130, 97)
+        Me.DomEmpr.Name = "DomEmpr"
+        Me.DomEmpr.Size = New System.Drawing.Size(164, 20)
+        Me.DomEmpr.TabIndex = 87
         '
         'Label23
         '
@@ -73,12 +72,12 @@ Partial Class EmpresaWnd
         Me.Label13.TabIndex = 72
         Me.Label13.Text = "Gerente"
         '
-        'TextBox9
+        'TBRSocial
         '
-        Me.TextBox9.Location = New System.Drawing.Point(130, 64)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(164, 20)
-        Me.TextBox9.TabIndex = 71
+        Me.TBRSocial.Location = New System.Drawing.Point(130, 64)
+        Me.TBRSocial.Name = "TBRSocial"
+        Me.TBRSocial.Size = New System.Drawing.Size(164, 20)
+        Me.TBRSocial.TabIndex = 71
         '
         'Label9
         '
@@ -89,50 +88,40 @@ Partial Class EmpresaWnd
         Me.Label9.TabIndex = 70
         Me.Label9.Text = "Razon Social:"
         '
-        'TextBox1
+        'TBRPatronal
         '
-        Me.TextBox1.Location = New System.Drawing.Point(130, 130)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(164, 20)
-        Me.TextBox1.TabIndex = 69
+        Me.TBRPatronal.Location = New System.Drawing.Point(130, 130)
+        Me.TBRPatronal.Name = "TBRPatronal"
+        Me.TBRPatronal.Size = New System.Drawing.Size(164, 20)
+        Me.TBRPatronal.TabIndex = 69
         '
-        'TextBox5
+        'TBNomEmpr
         '
-        Me.TextBox5.Location = New System.Drawing.Point(130, 31)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.ReadOnly = True
-        Me.TextBox5.Size = New System.Drawing.Size(164, 20)
-        Me.TextBox5.TabIndex = 68
+        Me.TBNomEmpr.Location = New System.Drawing.Point(130, 31)
+        Me.TBNomEmpr.Name = "TBNomEmpr"
+        Me.TBNomEmpr.Size = New System.Drawing.Size(164, 20)
+        Me.TBNomEmpr.TabIndex = 68
         '
-        'TextBox2
+        'TBEmail
         '
-        Me.TextBox2.Location = New System.Drawing.Point(409, 31)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(164, 20)
-        Me.TextBox2.TabIndex = 67
+        Me.TBEmail.Location = New System.Drawing.Point(409, 31)
+        Me.TBEmail.Name = "TBEmail"
+        Me.TBEmail.Size = New System.Drawing.Size(164, 20)
+        Me.TBEmail.TabIndex = 67
         '
-        'TextBox3
+        'TBRFC
         '
-        Me.TextBox3.Location = New System.Drawing.Point(130, 196)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(164, 20)
-        Me.TextBox3.TabIndex = 66
+        Me.TBRFC.Location = New System.Drawing.Point(130, 163)
+        Me.TBRFC.Name = "TBRFC"
+        Me.TBRFC.Size = New System.Drawing.Size(164, 20)
+        Me.TBRFC.TabIndex = 65
         '
-        'TextBox4
+        'TelEmpr
         '
-        Me.TextBox4.Location = New System.Drawing.Point(130, 163)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(164, 20)
-        Me.TextBox4.TabIndex = 65
-        '
-        'TextBox8
-        '
-        Me.TextBox8.Location = New System.Drawing.Point(409, 64)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.ReadOnly = True
-        Me.TextBox8.Size = New System.Drawing.Size(164, 20)
-        Me.TextBox8.TabIndex = 62
+        Me.TelEmpr.Location = New System.Drawing.Point(409, 64)
+        Me.TelEmpr.Name = "TelEmpr"
+        Me.TelEmpr.Size = New System.Drawing.Size(164, 20)
+        Me.TelEmpr.TabIndex = 62
         '
         'Label8
         '
@@ -197,30 +186,30 @@ Partial Class EmpresaWnd
         Me.Label1.TabIndex = 54
         Me.Label1.Text = "Nombre:"
         '
-        'ComboBox1
+        'CBFrecPago
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(347, 120)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 88
+        Me.CBFrecPago.FormattingEnabled = True
+        Me.CBFrecPago.Location = New System.Drawing.Point(347, 120)
+        Me.CBFrecPago.Name = "CBFrecPago"
+        Me.CBFrecPago.Size = New System.Drawing.Size(121, 21)
+        Me.CBFrecPago.TabIndex = 88
         '
-        'ComboBox2
+        'CBGerente
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(474, 120)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox2.TabIndex = 89
+        Me.CBGerente.FormattingEnabled = True
+        Me.CBGerente.Location = New System.Drawing.Point(474, 120)
+        Me.CBGerente.Name = "CBGerente"
+        Me.CBGerente.Size = New System.Drawing.Size(121, 21)
+        Me.CBGerente.TabIndex = 89
         '
-        'Button2
+        'OkayEmpresa
         '
-        Me.Button2.Location = New System.Drawing.Point(529, 248)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 91
-        Me.Button2.Text = "Aplicar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.OkayEmpresa.Location = New System.Drawing.Point(529, 248)
+        Me.OkayEmpresa.Name = "OkayEmpresa"
+        Me.OkayEmpresa.Size = New System.Drawing.Size(75, 23)
+        Me.OkayEmpresa.TabIndex = 91
+        Me.OkayEmpresa.Text = "Aplicar"
+        Me.OkayEmpresa.UseVisualStyleBackColor = True
         '
         'Button1
         '
@@ -231,26 +220,33 @@ Partial Class EmpresaWnd
         Me.Button1.Text = "Atrás"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'DTPEmpresa
+        '
+        Me.DTPEmpresa.Location = New System.Drawing.Point(130, 193)
+        Me.DTPEmpresa.Name = "DTPEmpresa"
+        Me.DTPEmpresa.Size = New System.Drawing.Size(164, 20)
+        Me.DTPEmpresa.TabIndex = 92
+        '
         'EmpresaWnd
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(616, 283)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.DTPEmpresa)
+        Me.Controls.Add(Me.OkayEmpresa)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.ComboBox2)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.TextBox23)
+        Me.Controls.Add(Me.CBGerente)
+        Me.Controls.Add(Me.CBFrecPago)
+        Me.Controls.Add(Me.DomEmpr)
         Me.Controls.Add(Me.Label23)
         Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.TextBox9)
+        Me.Controls.Add(Me.TBRSocial)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox8)
+        Me.Controls.Add(Me.TBRPatronal)
+        Me.Controls.Add(Me.TBNomEmpr)
+        Me.Controls.Add(Me.TBEmail)
+        Me.Controls.Add(Me.TBRFC)
+        Me.Controls.Add(Me.TelEmpr)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
@@ -266,17 +262,16 @@ Partial Class EmpresaWnd
 
     End Sub
 
-    Friend WithEvents TextBox23 As TextBox
+    Friend WithEvents DomEmpr As TextBox
     Friend WithEvents Label23 As Label
     Friend WithEvents Label13 As Label
-    Friend WithEvents TextBox9 As TextBox
+    Friend WithEvents TBRSocial As TextBox
     Friend WithEvents Label9 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents TBRPatronal As TextBox
+    Friend WithEvents TBNomEmpr As TextBox
+    Friend WithEvents TBEmail As TextBox
+    Friend WithEvents TBRFC As TextBox
+    Friend WithEvents TelEmpr As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
@@ -284,8 +279,9 @@ Partial Class EmpresaWnd
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents Button2 As Button
+    Friend WithEvents CBFrecPago As ComboBox
+    Friend WithEvents CBGerente As ComboBox
+    Friend WithEvents OkayEmpresa As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents DTPEmpresa As DateTimePicker
 End Class

@@ -6,10 +6,18 @@
     Private Sub btnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
 
         Temp = New EnlaceBD
-
+        Dim data As DataTable
         If (Temp.ValidaUser(TBUser.Text.Trim(), TBPass.Text.Trim())) Then
-            Me.Hide()
-            Form2.Show()
+            If (Temp.ValidaAdmin(TBUser.Text.Trim(), TBPass.Text.Trim())) Then
+
+                Me.Hide()
+                form11.Show()
+
+            Else
+
+                Me.Hide()
+                Form2.Show()
+            End If
         Else
             MsgBox("Usuario o Contraseña no encontrados!")
         End If
