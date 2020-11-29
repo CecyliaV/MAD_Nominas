@@ -239,7 +239,7 @@ exec sp_Empleado 'I'	, null, 'SU', 'Admin', 'contra123', '00000000000', '0000000
 
 exec sp_Empleado 'I'	, null, 'pingu', 'emiliano', 'contra123', '727956089', '72795608040', 'Banorte', '123456789', 'smt@gmail.com', '8111198227', 'Leal', 'Dmz' , 'LEDE980118HNLLMM01', null, null, null, null, 'Parras', 231, 'Mitras','Mty','Nuevo Leon', '64460', 1
 exec sp_Empleado 'I'	, null, 'cecy', 'cecy', 'contra123', '727956089', '72795608040', 'Banorte', '123456789', 'smt@gmail.com', '8111198227', 'villareal', 'Franco' , 'CECY980118HNLLMM01', null, null, null, null, 'smt', 231, 'Vista hermosa','Mty','Nuevo Leon', '64460', 0  
-exec sp_Empleado 'D', 1010, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null 
+exec sp_Empleado 'D', 1030, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null 
 
 exec sp_Empresa 'I', null, 'amazon', 'money', 'smwhere', 'smt', '72795608040', '20200118', 'amazon@gmail.com', '11111111111', null, null  
 exec sp_Empresa 'D', 100, null, null, null, null, null, null, null, null, null, null
@@ -258,7 +258,11 @@ exec sp_CheckSuperUser 1000
 
 exec sp_GetIdAny 'admin', 'contra123'
 
+exec sp_GetIdGerente 'admin'
+
 exec sp_GetGerenteInfo 1000
+
+exec sp_GetEmpresaGer 'Admin', 'contra123'
 
 select * from Empleado
 select * from Empresa 
@@ -266,4 +270,8 @@ select * from Departamento
 select * from Puesto
 select * from Nomina
  
-																																	  	
+UPDATE Empleado 
+set IdEmpresa = 104
+WHERE NoEmpleado = 1000;
+	
+																											  	

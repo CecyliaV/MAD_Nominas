@@ -1,14 +1,17 @@
 ﻿Public Class EmpresaWnd
     Public Temp As EnlaceBD
+    Dim idGerTemp As Integer = 0
+    Dim idFrecTemp As Integer = 0
     Private Sub Form4_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CBGerente.DropDownStyle = ComboBoxStyle.DropDownList
         Temp = New EnlaceBD
         Temp.LoadGerente(CBGerente)
-        Temp = Nothing
+
 
         If (CBGerente.Items.Count <> 0) Then
             CBGerente.SelectedIndex = 0
         End If
+
 
 
     End Sub
@@ -25,8 +28,10 @@
         Temp = New EnlaceBD
         Dim data As New DataTable
 
+        idGerTemp = Temp.GetIdFrecandGer(CBGerente.Text)
 
-        Temp.AddEmpresaInfo("I", TBNomEmpr.Text, TBRSocial.Text, DomEmpr.Text, TBRPatronal.Text, TBRFC.Text, DTPEmpresa.Text, TBEmail.Text, TelEmpr.Text, Nothing, Nothing)
+        Temp.AddEmpresaInfo("I", TBNomEmpr.Text, TBRSocial.Text, DomEmpr.Text, TBRPatronal.Text, TBRFC.Text, DTPEmpresa.Text, TBEmail.Text, TelEmpr.Text, Nothing, idGerTemp)
+
 
         TBNomEmpr.Text = 0
 
