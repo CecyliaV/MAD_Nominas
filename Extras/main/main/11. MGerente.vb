@@ -43,4 +43,10 @@
     Private Sub IdEmpleado_TextChanged(sender As Object, e As EventArgs) Handles IdEmpleado.TextChanged
 
     End Sub
+
+    Private Sub CreateDep_Click(sender As Object, e As EventArgs) Handles CreateDep.Click
+        Me.Hide()
+        Form5.Show()
+
+    End Sub
 End Class

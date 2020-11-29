@@ -23,9 +23,9 @@ Partial Class Form5
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form5))
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.TextBoxSBD = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.TextBoxND = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -33,12 +33,12 @@ Partial Class Form5
         Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'TextBox9
+        'TextBoxSBD
         '
-        Me.TextBox9.Location = New System.Drawing.Point(118, 72)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(164, 20)
-        Me.TextBox9.TabIndex = 101
+        Me.TextBoxSBD.Location = New System.Drawing.Point(118, 72)
+        Me.TextBoxSBD.Name = "TextBoxSBD"
+        Me.TextBoxSBD.Size = New System.Drawing.Size(164, 20)
+        Me.TextBoxSBD.TabIndex = 101
         '
         'Label9
         '
@@ -49,13 +49,12 @@ Partial Class Form5
         Me.Label9.TabIndex = 100
         Me.Label9.Text = "Sueldo Base:"
         '
-        'TextBox5
+        'TextBoxND
         '
-        Me.TextBox5.Location = New System.Drawing.Point(118, 39)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.ReadOnly = True
-        Me.TextBox5.Size = New System.Drawing.Size(164, 20)
-        Me.TextBox5.TabIndex = 98
+        Me.TextBoxND.Location = New System.Drawing.Point(118, 39)
+        Me.TextBoxND.Name = "TextBoxND"
+        Me.TextBoxND.Size = New System.Drawing.Size(164, 20)
+        Me.TextBoxND.TabIndex = 98
         '
         'Label1
         '
@@ -110,9 +109,9 @@ Partial Class Form5
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ComboBox2)
         Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.TextBox9)
+        Me.Controls.Add(Me.TextBoxSBD)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.TextBox5)
+        Me.Controls.Add(Me.TextBoxND)
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form5"
@@ -121,9 +120,9 @@ Partial Class Form5
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents TextBox9 As TextBox
+    Friend WithEvents TextBoxSBD As TextBox
     Friend WithEvents Label9 As Label
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents TextBoxND As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents Label13 As Label

@@ -170,6 +170,7 @@ Public Class EnlaceBD
 
         Return IdGerente
     End Function
+
     Public Function Get_GerenteInfo(ByVal Id As Integer) As DataTable
         Dim Qry As String
         Dim data As New DataTable
@@ -249,6 +250,54 @@ Public Class EnlaceBD
             Else
                 parametro11.Value = IdFrec
             End If
+
+            adaptador.SelectCommand = comandosql
+            adaptador.Fill(data)
+
+            fnd = True
+
+        Catch ex As SqlException
+            fnd = False
+
+        Finally
+            desconectar()
+        End Try
+        Return fnd
+
+    End Function
+
+    Public Function AddDepartamento(ByVal opc As String, ByVal Nombre As String,
+                                    ByVal SueldoBase As Decimal, ByVal IdGerente As Integer) As Boolean
+        Dim fnd As Boolean = False
+        Dim Qry As String
+        Dim data As New DataTable
+
+        Try
+
+            conectar()
+
+            Qry = "sp_Departamento"
+            comandosql = New SqlCommand(Qry, conexion)
+            comandosql.CommandType = CommandType.StoredProcedure
+
+
+            Dim parametro1 As SqlParameter = comandosql.Parameters.Add("@Opc", SqlDbType.VarChar, 1)
+            parametro1.Value = "I"
+            Dim parametro2 As SqlParameter = comandosql.Parameters.Add("@Nombre", SqlDbType.VarChar, 20)
+            If (Nombre = Nothing) Then
+                parametro2.Value = DBNull.Value
+            Else
+                parametro2.Value = Nombre
+            End If
+            Dim parametro3 As SqlParameter = comandosql.Parameters.Add("@SueldoBase", SqlDbType.Decimal, 13)
+            parametro3.Value = SueldoBase
+            Dim parametro4 As SqlParameter = comandosql.Parameters.Add("@IdGerente", SqlDbType.BigInt, 20)
+            If (IdGerente = Nothing) Then
+                parametro4.Value = DBNull.Value
+            Else
+                parametro4.Value = IdGerente
+            End If
+
 
             adaptador.SelectCommand = comandosql
             adaptador.Fill(data)
