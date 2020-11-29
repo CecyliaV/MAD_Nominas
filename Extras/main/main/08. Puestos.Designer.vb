@@ -89,7 +89,6 @@ Partial Class Puestos
         '
         Me.TextBox5.Location = New System.Drawing.Point(118, 37)
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.ReadOnly = True
         Me.TextBox5.Size = New System.Drawing.Size(164, 20)
         Me.TextBox5.TabIndex = 107
         '
