@@ -45,6 +45,8 @@ Partial Class EmpresaWnd
         Me.OkayEmpresa = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.DTPEmpresa = New System.Windows.Forms.DateTimePicker()
+        Me.IdGerente = New System.Windows.Forms.TextBox()
+        Me.IdFrec = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'DomEmpr
@@ -227,11 +229,27 @@ Partial Class EmpresaWnd
         Me.DTPEmpresa.Size = New System.Drawing.Size(164, 20)
         Me.DTPEmpresa.TabIndex = 92
         '
+        'IdGerente
+        '
+        Me.IdGerente.Location = New System.Drawing.Point(495, 147)
+        Me.IdGerente.Name = "IdGerente"
+        Me.IdGerente.Size = New System.Drawing.Size(100, 20)
+        Me.IdGerente.TabIndex = 93
+        '
+        'IdFrec
+        '
+        Me.IdFrec.Location = New System.Drawing.Point(368, 147)
+        Me.IdFrec.Name = "IdFrec"
+        Me.IdFrec.Size = New System.Drawing.Size(100, 20)
+        Me.IdFrec.TabIndex = 94
+        '
         'EmpresaWnd
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(616, 283)
+        Me.Controls.Add(Me.IdFrec)
+        Me.Controls.Add(Me.IdGerente)
         Me.Controls.Add(Me.DTPEmpresa)
         Me.Controls.Add(Me.OkayEmpresa)
         Me.Controls.Add(Me.Button1)
@@ -284,4 +302,6 @@ Partial Class EmpresaWnd
     Friend WithEvents OkayEmpresa As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents DTPEmpresa As DateTimePicker
+    Friend WithEvents IdGerente As TextBox
+    Friend WithEvents IdFrec As TextBox
 End Class
