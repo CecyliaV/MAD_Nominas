@@ -1,5 +1,4 @@
 ﻿Public Class Form3
-    Public Temp As EnlaceBD
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
 
     End Sub
@@ -18,14 +17,6 @@
     End Sub
 
     Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
-    End Sub
-
-    Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Temp = New EnlaceBD
-        Dim Data As DataTable
-
-        TBEmpresa.Text = Temp.GetEmpresaName(LogIn.TBUser.Text, LogIn.TBPass.Text)
 
     End Sub
 End Class

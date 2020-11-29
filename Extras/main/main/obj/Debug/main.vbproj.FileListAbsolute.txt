@@ -47,4 +47,25 @@ D:\Facultad\Sexto Semestre\MAD\MAD_VB_Proyecto_v2\MAD_Nominas-main\Extras\main\m
 D:\Facultad\Sexto Semestre\MAD\MAD_VB_Proyecto_v2\MAD_Nominas-main\Extras\main\main\obj\Debug\main.exe
 D:\Facultad\Sexto Semestre\MAD\MAD_VB_Proyecto_v2\MAD_Nominas-main\Extras\main\main\obj\Debug\main.xml
 D:\Facultad\Sexto Semestre\MAD\MAD_VB_Proyecto_v2\MAD_Nominas-main\Extras\main\main\obj\Debug\main.pdb
-D:\Facultad\Sexto Semestre\MAD\MAD_VB_Proyecto_v2\MAD_Nominas-main\Extras\main\main\obj\Debug\main.vbprojAssemblyReference.cache
+D:\Documentos\FCFM\Materias\MAD\MAD_Nominas28-11-2020\MAD_Nominas-main\Extras\main\main\bin\Debug\main.exe.config
+D:\Documentos\FCFM\Materias\MAD\MAD_Nominas28-11-2020\MAD_Nominas-main\Extras\main\main\bin\Debug\main.exe
+D:\Documentos\FCFM\Materias\MAD\MAD_Nominas28-11-2020\MAD_Nominas-main\Extras\main\main\bin\Debug\main.pdb
+D:\Documentos\FCFM\Materias\MAD\MAD_Nominas28-11-2020\MAD_Nominas-main\Extras\main\main\bin\Debug\main.xml
+D:\Documentos\FCFM\Materias\MAD\MAD_Nominas28-11-2020\MAD_Nominas-main\Extras\main\main\obj\Debug\main.vbprojAssemblyReference.cache
+D:\Documentos\FCFM\Materias\MAD\MAD_Nominas28-11-2020\MAD_Nominas-main\Extras\main\main\obj\Debug\main.LogIn.resources
+D:\Documentos\FCFM\Materias\MAD\MAD_Nominas28-11-2020\MAD_Nominas-main\Extras\main\main\obj\Debug\main.Form2.resources
+D:\Documentos\FCFM\Materias\MAD\MAD_Nominas28-11-2020\MAD_Nominas-main\Extras\main\main\obj\Debug\main.Form3.resources
+D:\Documentos\FCFM\Materias\MAD\MAD_Nominas28-11-2020\MAD_Nominas-main\Extras\main\main\obj\Debug\main.EmpresaWnd.resources
+D:\Documentos\FCFM\Materias\MAD\MAD_Nominas28-11-2020\MAD_Nominas-main\Extras\main\main\obj\Debug\main.Form5.resources
+D:\Documentos\FCFM\Materias\MAD\MAD_Nominas28-11-2020\MAD_Nominas-main\Extras\main\main\obj\Debug\main.Form6.resources
+D:\Documentos\FCFM\Materias\MAD\MAD_Nominas28-11-2020\MAD_Nominas-main\Extras\main\main\obj\Debug\main.Deducciones.resources
+D:\Documentos\FCFM\Materias\MAD\MAD_Nominas28-11-2020\MAD_Nominas-main\Extras\main\main\obj\Debug\main.Puestos.resources
+D:\Documentos\FCFM\Materias\MAD\MAD_Nominas28-11-2020\MAD_Nominas-main\Extras\main\main\obj\Debug\main.Form9.resources
+D:\Documentos\FCFM\Materias\MAD\MAD_Nominas28-11-2020\MAD_Nominas-main\Extras\main\main\obj\Debug\main.Form10.resources
+D:\Documentos\FCFM\Materias\MAD\MAD_Nominas28-11-2020\MAD_Nominas-main\Extras\main\main\obj\Debug\main.form11.resources
+D:\Documentos\FCFM\Materias\MAD\MAD_Nominas28-11-2020\MAD_Nominas-main\Extras\main\main\obj\Debug\main.Resources.resources
+D:\Documentos\FCFM\Materias\MAD\MAD_Nominas28-11-2020\MAD_Nominas-main\Extras\main\main\obj\Debug\main.vbproj.GenerateResource.cache
+D:\Documentos\FCFM\Materias\MAD\MAD_Nominas28-11-2020\MAD_Nominas-main\Extras\main\main\obj\Debug\main.vbproj.CoreCompileInputs.cache
+D:\Documentos\FCFM\Materias\MAD\MAD_Nominas28-11-2020\MAD_Nominas-main\Extras\main\main\obj\Debug\main.exe
+D:\Documentos\FCFM\Materias\MAD\MAD_Nominas28-11-2020\MAD_Nominas-main\Extras\main\main\obj\Debug\main.xml
+D:\Documentos\FCFM\Materias\MAD\MAD_Nominas28-11-2020\MAD_Nominas-main\Extras\main\main\obj\Debug\main.pdb

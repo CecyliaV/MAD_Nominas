@@ -82,6 +82,8 @@ Partial Class LogIn
         Me.Controls.Add(Me.TBUser)
         Me.Controls.Add(Me.LabelUser)
         Me.Controls.Add(Me.btnIngresar)
+        Me.Cursor = System.Windows.Forms.Cursors.Default
+        Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "LogIn"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
