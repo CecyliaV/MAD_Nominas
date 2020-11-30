@@ -33,14 +33,15 @@ CREATE PROCEDURE sp_Empleado
 @Municipio		VARCHAR(20),
 @Estado			VARCHAR(20),
 @CP				CHAR(5),
-@Gerente			Bit		
+@Gerente			Bit,
+@fecNac			Date	
 )
 AS
 BEGIN 
 if @Opc = 'I'
 BEGIN
-INSERT INTO Empleado(Username,Nombres ,Contraseña, NSS, RFC, Banco, NoCuenta, Email, Telefonos, ApellidoM, ApellidoP, CURP, IdEmpresa, IdPuesto, IdNomina, IdDepto, Calle, Numero, Colonia, Municipio, Estado, CP, Gerente)
-VALUES (@User,@Nombre, @Contraseña, @NSS, @RFC, @Banco, @NoCuenta, @Email, @Telefonos, @ApM, @ApP, @CURP, @IdEmpresa, @IdPuesto, @IdNomina, @IdDepto, @Calle, @Numero, @Colonia, @Municipio, @Estado, @CP, @Gerente)
+INSERT INTO Empleado(Username,Nombres ,Contraseña, NSS, RFC, Banco, NoCuenta, Email, Telefonos, ApellidoM, ApellidoP, CURP, IdEmpresa, IdPuesto, IdNomina, IdDepto, Calle, Numero, Colonia, Municipio, Estado, CP, Gerente, FecNac)
+VALUES (@User,@Nombre, @Contraseña, @NSS, @RFC, @Banco, @NoCuenta, @Email, @Telefonos, @ApM, @ApP, @CURP, @IdEmpresa, @IdPuesto, @IdNomina, @IdDepto, @Calle, @Numero, @Colonia, @Municipio, @Estado, @CP, @Gerente, @fecNac)
 END
 
 IF @Opc = 'D'
@@ -49,8 +50,6 @@ DELETE
 FROM Empleado
 WHERE NoEmpleado = @Id
 END
-
-
 
 END
 
@@ -155,31 +154,31 @@ END
 END
 
 --Puesto--
-IF EXISTS(SELECT 1 FROM sysobjects WHERE name = 'sp_Puesto' AND type = 'P')	  --Tipo procedure
+IF EXISTS(SELECT 1 FROM sysobjects WHERE name = 'sp_Puesto' AND type = 'P')      --Tipo procedure
 DROP PROCEDURE sp_Puesto;
 go
 
 CREATE PROCEDURE sp_Puesto
 (
-@Opc				CHAR(1),
-@Id				INT = null,
-@Nombre			VARCHAR(20) = null,
-@NivSalarial		DECIMAL(5,2)
+@Opc                CHAR(1),
+@Id                INT = null,
+@Nombre            VARCHAR(20) = null,
+@NivSalarial        DECIMAL(5,2)
 )
 AS
 BEGIN 
-	if @Opc = 'I'
-		BEGIN
-			INSERT INTO Puesto(Nombre,NivSalarial)
-			VALUES (@Nombre,@NivSalarial)
-		END
+    if @Opc = 'I'
+        BEGIN
+            INSERT INTO Puesto(Nombre,NivSalarial)
+            VALUES (@Nombre,@NivSalarial)
+        END
 
-	IF @Opc = 'D'
-		BEGIN
-			DELETE 
-			FROM Puesto
-			WHERE IdPuesto = @Id
-		END
+    IF @Opc = 'D'
+        BEGIN
+            DELETE 
+            FROM Puesto
+            WHERE IdPuesto = @Id
+        END
 
 END
 
@@ -286,33 +285,92 @@ BEGIN
 	select NoEmpleado 'id', Nombres 'Nombre', IdEmpresa 'Empresa', IdDepto 'Departamento', IdPuesto 'Puesto' from Empleado where NoEmpleado = @id
 END
 
+
+
+--Conseguir un Id del gerente--
+IF EXISTS(SELECT 1 FROM sysobjects WHERE name = 'sp_GetIdGerente' AND type = 'P')	  --Tipo procedure
+DROP PROCEDURE sp_GetIdGerente;
+go
+
+CREATE PROCEDURE sp_GetIdGerente
+(
+   @Nombre			varchar(20)
+)
+AS
+BEGIN
+	select NoEmpleado 'id' from Empleado where Nombres = @Nombre and Gerente = 1
+END
+
+--Conseguir nombre de la empresa del gerente--
+IF EXISTS(SELECT 1 FROM sysobjects WHERE name = 'sp_GetEmpresaGer' AND type = 'P')	  --Tipo procedure
+DROP PROCEDURE sp_GetEmpresaGer;
+go
+
+CREATE PROCEDURE sp_GetEmpresaGer
+(
+   @Nombre			varchar(20),
+   @Pass				varchar(20)
+)
+AS
+BEGIN
+SELECT
+
+E.Nombre as 'Empresa'
+from Empresa E
+JOIN Empleado D
+on E.IdEmpresa = D.IdEmpresa
+where D.Nombres = @Nombre and Contraseña = @Pass
+
+END
+
+--Conseguir Id de la empresa del gerente--
+IF EXISTS(SELECT 1 FROM sysobjects WHERE name = 'sp_GetEmpresaId' AND type = 'P')	  --Tipo procedure
+DROP PROCEDURE sp_GetEmpresaId;
+go
+
+CREATE PROCEDURE sp_GetEmpresaId
+(
+   @Nombre			varchar(20),
+   @Pass				varchar(20)
+)
+AS
+BEGIN
+SELECT
+
+E.IdEmpresa as 'IdEmpresa'
+from Empresa E
+JOIN Empleado D
+on E.IdEmpresa = D.IdEmpresa
+where D.Nombres = @Nombre  and Contraseña = @Pass
+
+END
+
 -- Percepciones
-IF EXISTS(SELECT 1 FROM sysobjects WHERE name = 'sp_Percep' AND type = 'P')	  --Tipo procedure
+IF EXISTS(SELECT 1 FROM sysobjects WHERE name = 'sp_Percep' AND type = 'P')      --Tipo procedure
 DROP PROCEDURE sp_Percep;
 go
 
 CREATE PROCEDURE sp_Percepc
 (
-@Opc				CHAR(1),
-@Id				INT = null,
-@Nombre			VARCHAR(30) = null,
-@Valor			DECIMAL(11,2),
-@Porcentaje		tinyint
+@Opc                CHAR(1),
+@Id                INT = null,
+@Nombre            VARCHAR(30) = null,
+@Valor            DECIMAL(11,2),
+@Porcentaje        tinyint
 )
 AS
 BEGIN 
-	if @Opc = 'I'
-		BEGIN
-			INSERT INTO Percepciones(Nombre, Valor, Porcentaje)
-			VALUES (@Nombre, @Valor, @Porcentaje)
-		END
+    if @Opc = 'I'
+        BEGIN
+            INSERT INTO Percepciones(Nombre, Valor, Porcentaje)
+            VALUES (@Nombre, @Valor, @Porcentaje)
+        END
 
-	IF @Opc = 'D'
-		BEGIN
-			DELETE 
-			FROM Puesto
-			WHERE IdPuesto = @Id
-		END
+    IF @Opc = 'D'
+        BEGIN
+            DELETE 
+            FROM Puesto
+            WHERE IdPuesto = @Id
+        END
 
 END
-

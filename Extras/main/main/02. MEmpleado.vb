@@ -5,7 +5,7 @@
 
     Private Sub MisDatosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MisDatosToolStripMenuItem.Click
         Me.Hide()
-        Form3.Show()
+        FEmpleado.Show()
 
     End Sub
 

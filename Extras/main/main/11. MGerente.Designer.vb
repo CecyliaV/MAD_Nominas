@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class form11
+Partial Class GerenteForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class form11
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(form11))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GerenteForm))
         Me.TBEmpresa = New System.Windows.Forms.TextBox()
         Me.TBNombre = New System.Windows.Forms.TextBox()
         Me.IdEmpleado = New System.Windows.Forms.TextBox()
@@ -38,6 +38,7 @@ Partial Class form11
         Me.CreateEmpresa = New System.Windows.Forms.ToolStripMenuItem()
         Me.CreateDep = New System.Windows.Forms.ToolStripMenuItem()
         Me.CreateEmpleado = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CreatePuesto = New System.Windows.Forms.ToolStripMenuItem()
         Me.SolicitarVacacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ResumenDePagosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -46,7 +47,6 @@ Partial Class form11
         Me.ReporteDeNominaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TBPuesto = New System.Windows.Forms.TextBox()
-        Me.PuestosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -116,89 +116,95 @@ Partial Class form11
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EDIT_MisDatos, Me.GenerarRecibosToolStripMenuItem, Me.GenerarToolStripMenuItem, Me.SolicitarVacacionesToolStripMenuItem, Me.ResumenDePagosToolStripMenuItem, Me.ReportesToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(669, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(669, 25)
         Me.MenuStrip1.TabIndex = 24
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'EDIT_MisDatos
         '
         Me.EDIT_MisDatos.Name = "EDIT_MisDatos"
-        Me.EDIT_MisDatos.Size = New System.Drawing.Size(70, 20)
+        Me.EDIT_MisDatos.Size = New System.Drawing.Size(78, 21)
         Me.EDIT_MisDatos.Text = "Mis datos"
         '
         'GenerarRecibosToolStripMenuItem
         '
         Me.GenerarRecibosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReciboDeToolStripMenuItem})
         Me.GenerarRecibosToolStripMenuItem.Name = "GenerarRecibosToolStripMenuItem"
-        Me.GenerarRecibosToolStripMenuItem.Size = New System.Drawing.Size(101, 20)
+        Me.GenerarRecibosToolStripMenuItem.Size = New System.Drawing.Size(114, 21)
         Me.GenerarRecibosToolStripMenuItem.Text = "Generar recibos"
         '
         'ReciboDeToolStripMenuItem
         '
         Me.ReciboDeToolStripMenuItem.Name = "ReciboDeToolStripMenuItem"
-        Me.ReciboDeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ReciboDeToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
         Me.ReciboDeToolStripMenuItem.Text = "Recibo de Nomina"
         '
         'GenerarToolStripMenuItem
         '
-        Me.GenerarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CreateEmpresa, Me.CreateDep, Me.CreateEmpleado, Me.PuestosToolStripMenuItem})
+        Me.GenerarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CreateEmpresa, Me.CreateDep, Me.CreateEmpleado, Me.CreatePuesto})
         Me.GenerarToolStripMenuItem.Name = "GenerarToolStripMenuItem"
-        Me.GenerarToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
+        Me.GenerarToolStripMenuItem.Size = New System.Drawing.Size(67, 21)
         Me.GenerarToolStripMenuItem.Text = "Generar"
         '
         'CreateEmpresa
         '
         Me.CreateEmpresa.Name = "CreateEmpresa"
-        Me.CreateEmpresa.Size = New System.Drawing.Size(180, 22)
+        Me.CreateEmpresa.Size = New System.Drawing.Size(185, 22)
         Me.CreateEmpresa.Text = "Empresa"
         '
         'CreateDep
         '
         Me.CreateDep.Name = "CreateDep"
-        Me.CreateDep.Size = New System.Drawing.Size(180, 22)
+        Me.CreateDep.Size = New System.Drawing.Size(185, 22)
         Me.CreateDep.Text = "Departamento"
         '
         'CreateEmpleado
         '
         Me.CreateEmpleado.Name = "CreateEmpleado"
-        Me.CreateEmpleado.Size = New System.Drawing.Size(180, 22)
+        Me.CreateEmpleado.Size = New System.Drawing.Size(185, 22)
         Me.CreateEmpleado.Text = "Empleado"
+        '
+        'CreatePuesto
+        '
+        Me.CreatePuesto.Name = "CreatePuesto"
+        Me.CreatePuesto.Size = New System.Drawing.Size(185, 22)
+        Me.CreatePuesto.Text = "Puesto"
         '
         'SolicitarVacacionesToolStripMenuItem
         '
         Me.SolicitarVacacionesToolStripMenuItem.Name = "SolicitarVacacionesToolStripMenuItem"
-        Me.SolicitarVacacionesToolStripMenuItem.Size = New System.Drawing.Size(122, 20)
+        Me.SolicitarVacacionesToolStripMenuItem.Size = New System.Drawing.Size(133, 21)
         Me.SolicitarVacacionesToolStripMenuItem.Text = "Solicitar vacaciones"
         '
         'ResumenDePagosToolStripMenuItem
         '
         Me.ResumenDePagosToolStripMenuItem.Name = "ResumenDePagosToolStripMenuItem"
-        Me.ResumenDePagosToolStripMenuItem.Size = New System.Drawing.Size(119, 20)
+        Me.ResumenDePagosToolStripMenuItem.Size = New System.Drawing.Size(132, 21)
         Me.ResumenDePagosToolStripMenuItem.Text = "Resumen de Pagos"
         '
         'ReportesToolStripMenuItem
         '
         Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReporteNominaGeneralToolStripMenuItem1, Me.ReporteHeadcounterToolStripMenuItem1, Me.ReporteDeNominaToolStripMenuItem1})
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(73, 21)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
         'ReporteNominaGeneralToolStripMenuItem1
         '
         Me.ReporteNominaGeneralToolStripMenuItem1.Name = "ReporteNominaGeneralToolStripMenuItem1"
-        Me.ReporteNominaGeneralToolStripMenuItem1.Size = New System.Drawing.Size(204, 22)
+        Me.ReporteNominaGeneralToolStripMenuItem1.Size = New System.Drawing.Size(223, 22)
         Me.ReporteNominaGeneralToolStripMenuItem1.Text = "Reporte Nomina General"
         '
         'ReporteHeadcounterToolStripMenuItem1
         '
         Me.ReporteHeadcounterToolStripMenuItem1.Name = "ReporteHeadcounterToolStripMenuItem1"
-        Me.ReporteHeadcounterToolStripMenuItem1.Size = New System.Drawing.Size(204, 22)
+        Me.ReporteHeadcounterToolStripMenuItem1.Size = New System.Drawing.Size(223, 22)
         Me.ReporteHeadcounterToolStripMenuItem1.Text = "Reporte Headcounter"
         '
         'ReporteDeNominaToolStripMenuItem1
         '
         Me.ReporteDeNominaToolStripMenuItem1.Name = "ReporteDeNominaToolStripMenuItem1"
-        Me.ReporteDeNominaToolStripMenuItem1.Size = New System.Drawing.Size(204, 22)
+        Me.ReporteDeNominaToolStripMenuItem1.Size = New System.Drawing.Size(223, 22)
         Me.ReporteDeNominaToolStripMenuItem1.Text = "Reporte de Nomina"
         '
         'Label7
@@ -218,13 +224,7 @@ Partial Class form11
         Me.TBPuesto.Size = New System.Drawing.Size(198, 20)
         Me.TBPuesto.TabIndex = 35
         '
-        'PuestosToolStripMenuItem
-        '
-        Me.PuestosToolStripMenuItem.Name = "PuestosToolStripMenuItem"
-        Me.PuestosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.PuestosToolStripMenuItem.Text = "Puestos"
-        '
-        'form11
+        'GerenteForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -240,8 +240,7 @@ Partial Class form11
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "form11"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Name = "GerenteForm"
         Me.Text = "Menu Gerente"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -272,5 +271,5 @@ Partial Class form11
     Friend WithEvents Label7 As Label
     Friend WithEvents TBPuesto As TextBox
     Friend WithEvents CreateEmpleado As ToolStripMenuItem
-    Friend WithEvents PuestosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CreatePuesto As ToolStripMenuItem
 End Class

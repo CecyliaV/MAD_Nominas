@@ -27,10 +27,10 @@ Partial Class Form5
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TextBoxND = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.CBGerente = New System.Windows.Forms.ComboBox()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.ApplyDept = New System.Windows.Forms.Button()
+        Me.BackDept = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'TextBoxSBD
@@ -65,13 +65,13 @@ Partial Class Form5
         Me.Label1.TabIndex = 88
         Me.Label1.Text = "Nombre:"
         '
-        'ComboBox2
+        'CBGerente
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(135, 122)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox2.TabIndex = 103
+        Me.CBGerente.FormattingEnabled = True
+        Me.CBGerente.Location = New System.Drawing.Point(135, 122)
+        Me.CBGerente.Name = "CBGerente"
+        Me.CBGerente.Size = New System.Drawing.Size(121, 21)
+        Me.CBGerente.TabIndex = 103
         '
         'Label13
         '
@@ -82,32 +82,32 @@ Partial Class Form5
         Me.Label13.TabIndex = 102
         Me.Label13.Text = "Gerente de Departamento"
         '
-        'Button2
+        'ApplyDept
         '
-        Me.Button2.Location = New System.Drawing.Point(288, 169)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 105
-        Me.Button2.Text = "Aplicar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.ApplyDept.Location = New System.Drawing.Point(288, 169)
+        Me.ApplyDept.Name = "ApplyDept"
+        Me.ApplyDept.Size = New System.Drawing.Size(75, 23)
+        Me.ApplyDept.TabIndex = 105
+        Me.ApplyDept.Text = "Aplicar"
+        Me.ApplyDept.UseVisualStyleBackColor = True
         '
-        'Button1
+        'BackDept
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 169)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 104
-        Me.Button1.Text = "Atrás"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BackDept.Location = New System.Drawing.Point(12, 169)
+        Me.BackDept.Name = "BackDept"
+        Me.BackDept.Size = New System.Drawing.Size(75, 23)
+        Me.BackDept.TabIndex = 104
+        Me.BackDept.Text = "Atrás"
+        Me.BackDept.UseVisualStyleBackColor = True
         '
         'Form5
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(375, 204)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.ComboBox2)
+        Me.Controls.Add(Me.ApplyDept)
+        Me.Controls.Add(Me.BackDept)
+        Me.Controls.Add(Me.CBGerente)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.TextBoxSBD)
         Me.Controls.Add(Me.Label9)
@@ -124,8 +124,8 @@ Partial Class Form5
     Friend WithEvents Label9 As Label
     Friend WithEvents TextBoxND As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents CBGerente As ComboBox
     Friend WithEvents Label13 As Label
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents ApplyDept As Button
+    Friend WithEvents BackDept As Button
 End Class

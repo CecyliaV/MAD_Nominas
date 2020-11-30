@@ -11,7 +11,7 @@
             If (Temp.ValidaAdmin(TBUser.Text.Trim(), TBPass.Text.Trim())) Then
 
                 Me.Hide()
-                form11.Show()
+                GerenteForm.Show()
 
             Else
 

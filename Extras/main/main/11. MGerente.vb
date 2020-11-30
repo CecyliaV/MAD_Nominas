@@ -1,4 +1,4 @@
-﻿Public Class form11
+﻿Public Class GerenteForm
     Public Temp As EnlaceBD
     Private Sub ReportesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportesToolStripMenuItem.Click
 
@@ -12,6 +12,7 @@
     Private Sub form11_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Temp = New EnlaceBD
         Dim aux As DataTable
+        Dim aux2 As DataTable
 
         Dim IdGerente As Integer
         Dim user As String
@@ -29,11 +30,15 @@
             CreateEmpresa.Enabled = True
         Else
             CreateEmpresa.Enabled = False
+            CreateEmpresa.Visible = False
         End If
+
+        aux2 = Temp.GetEmpresaNom(user, pass)
+
 
         IdEmpleado.Text = aux.Rows(0).Item("id").ToString
         TBNombre.Text = aux.Rows(0).Item("Nombre").ToString
-        TBEmpresa.Text = aux.Rows(0).Item("Empresa").ToString
+        TBEmpresa.Text = aux2.Rows(0).Item("Empresa").ToString
         TBPuesto.Text = aux.Rows(0).Item("Puesto").ToString
 
 
@@ -44,14 +49,20 @@
 
     End Sub
 
+    Private Sub CreateEmpleado_Click(sender As Object, e As EventArgs) Handles CreateEmpleado.Click
+        Me.Hide()
+
+        FEmpleado.Show()
+
+    End Sub
+
     Private Sub CreateDep_Click(sender As Object, e As EventArgs) Handles CreateDep.Click
         Me.Hide()
         Form5.Show()
 
     End Sub
 
-    Private Sub PuestosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PuestosToolStripMenuItem.Click
-
+    Private Sub CreatePuesto_Click(sender As Object, e As EventArgs) Handles CreatePuesto.Click
         Me.Hide()
         Puestos.Show()
 

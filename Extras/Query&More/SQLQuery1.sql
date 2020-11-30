@@ -75,29 +75,29 @@ CREATE TABLE Frecuencia (
 
 --Percepciones--
 CREATE TABLE Percepciones (
-	IdPercepcion		int identity(2000, 1),
-	Nombre				varchar(30),
-	Valor				decimal(11,2), 
-	Porcentaje			tinyint,
-	CONSTRAINT PK_Percepciones PRIMARY KEY(IdPercepcion)
+    IdPercepcion        int identity(2000, 1),
+    Nombre              varchar(30),
+    Valor               decimal(11,2), 
+    Porcentaje          tinyint,
+    CONSTRAINT PK_Percepciones PRIMARY KEY(IdPercepcion)
 )
 
 --Incidencias--
 CREATE TABLE Incidencias (
-	IdIncidencias		int identity (2400, 1),
-	Nombre				varchar(30),
-	Valor				decimal(11,2), 
-	Porcentaje			tinyint,
-	CONSTRAINT PK_Incidencias PRIMARY KEY(IdIncidencias)
+    IdIncidencias        int identity (2400, 1),
+    Nombre               varchar(30),
+    Valor                decimal(11,2), 
+    Porcentaje           tinyint,
+    CONSTRAINT PK_Incidencias PRIMARY KEY(IdIncidencias)
 )
 
 --Deducciones--
 CREATE TABLE Deducciones (
-	IdDeduccion			int identity(2200,1),
-	Nombre				varchar(30),
-	Valor				decimal(11,2), 
-	Porcentaje			tinyint,
-	CONSTRAINT PK_Deduccion PRIMARY KEY(IdDeduccion)
+    IdDeduccion          int identity(2200,1),
+    Nombre               varchar(30),
+    Valor                decimal(11,2), 
+    Porcentaje           tinyint,
+    CONSTRAINT PK_Deduccion PRIMARY KEY(IdDeduccion)
 )
 
 --Nomina--
@@ -177,10 +177,9 @@ CREATE TABLE Puesto (
 	IdPuesto			int not null	 identity(500, 1),
 	Nombre			varchar(30),
 	NivSalarial		decimal(5,2),
-	NoEmpleados		int,
-	IdDepartamento	int,	--YA NO 
+	
 	CONSTRAINT PK_Puesto PRIMARY KEY(IdPuesto),
-	CONSTRAINT FK_Puesto_Departamento FOREIGN KEY (IdDepartamento) REFERENCES Departamento(IdDepartamento)	--YA NO 
+	CONSTRAINT FK_Puesto_Departamento FOREIGN KEY (IdDepartamento) REFERENCES Departamento(IdDepartamento)
 )
 
 --Empresa_Departamento--
@@ -215,6 +214,8 @@ ALTER TABLE Empleado DROP CONSTRAINT FK_Empleado_Departamento;
 ALTER TABLE Empleado DROP CONSTRAINT FK_Empleado_Puesto;
 ALTER TABLE Empleado DROP CONSTRAINT FK_Empleado_Nomina;
 
+ALTER TABLE Empleado	 ADD FecNac Date
+--ALTER TABLE Empleado	 ADD Numero VARCHAR	  ****
 
 ALTER TABLE Empresa ADD CONSTRAINT FK_Empresa_Gerente FOREIGN KEY (IdGerente) REFERENCES Empleado(NoEmpleado)
 ALTER TABLE Empresa ADD CONSTRAINT FK_Empresa_Frecuencia FOREIGN KEY (IdFrecuencia) REFERENCES Frecuencia(IdFrecuencia)
@@ -233,9 +234,6 @@ ALTER TABLE Puesto ADD CONSTRAINT FK_Puesto_Departamento FOREIGN KEY (IdDepartam
 ALTER TABLE EmprDep DROP CONSTRAINT FK_EmprDep_Departamento;
 ALTER TABLE EmprPue DROP CONSTRAINT FK_EmprPue_Departamento;
 
-ALTER TABLE Puesto DROP CONSTRAINT FK_Puesto_Departamento 
-ALTER TABLE Puesto DROP COLUMN IdDepartamento
-
 ALTER TABLE Nomina DROP CONSTRAINT FK_Nomina_Percepciones
 ALTER TABLE Nomina DROP CONSTRAINT FK_Nomina_Incidencias 
 ALTER TABLE Nomina DROP CONSTRAINT FK_Nomina_Deducciones 
@@ -244,16 +242,18 @@ ALTER TABLE Nomina ADD CONSTRAINT FK_Nomina_Percepciones FOREIGN KEY (IdPercepci
 ALTER TABLE Nomina ADD CONSTRAINT FK_Nomina_Incidencias FOREIGN KEY (IdIncidencias) REFERENCES Incidencias(IdIncidencias)
 ALTER TABLE Nomina ADD CONSTRAINT FK_Nomina_Deducciones FOREIGN KEY (IdDeducciones) REFERENCES Deducciones(IdDeduccion)
 
+ALTER TABLE Puesto DROP CONSTRAINT FK_Puesto_Departamento 
+ALTER TABLE Puesto DROP COLUMN IdDepartamento
 
 --SU--
 exec sp_Empleado 'I'	, null, 'SU', 'Admin', 'contra123', '00000000000', '0000000000000', 'Banco', '123456789', 'admin@gmail.com', '8181818181', 'Super', 'Usuario' , '00000000000000000', null, null, null, null, ' - ', 0, ' - ',' - ',' - ', ' - ', 1
 
 exec sp_Empleado 'I'	, null, 'pingu', 'emiliano', 'contra123', '727956089', '72795608040', 'Banorte', '123456789', 'smt@gmail.com', '8111198227', 'Leal', 'Dmz' , 'LEDE980118HNLLMM01', null, null, null, null, 'Parras', 231, 'Mitras','Mty','Nuevo Leon', '64460', 1
 exec sp_Empleado 'I'	, null, 'cecy', 'cecy', 'contra123', '727956089', '72795608040', 'Banorte', '123456789', 'smt@gmail.com', '8111198227', 'villareal', 'Franco' , 'CECY980118HNLLMM01', null, null, null, null, 'smt', 231, 'Vista hermosa','Mty','Nuevo Leon', '64460', 0  
-exec sp_Empleado 'D', 1010, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null 
+exec sp_Empleado 'D', 1030, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null 
 
 exec sp_Empresa 'I', null, 'amazon', 'money', 'smwhere', 'smt', '72795608040', '20200118', 'amazon@gmail.com', '11111111111', null, null  
-exec sp_Empresa 'D', 100, null, null, null, null, null, null, null, null, null, null
+exec sp_Empresa 'D', 108, null, null, null, null, null, null, null, null, null, null
 
 exec sp_Departamento 'I', null, 'Cocina', '1000.00', 1000
 exec sp_Departamento 'D', 11, null, null, null
@@ -265,11 +265,17 @@ exec sp_Nomina 'I', null, 100.00, 950.00, '20200519', 0, 0, 0
 exec sp_Nomina 'D', 101, null, null, null, null
 
 
-exec sp_CheckSuperUser 1000
+exec sp_CheckAdmin 'Alex	', '123'
 
 exec sp_GetIdAny 'admin', 'contra123'
 
+exec sp_GetIdGerente 'admin'
+
 exec sp_GetGerenteInfo 1000
+
+exec sp_GetEmpresaGer 'Admin', 'contra123'
+
+exec sp_GetEmpresaId 'admin', 'contra123'
 
 select * from Empleado
 select * from Empresa 
@@ -277,4 +283,8 @@ select * from Departamento
 select * from Puesto
 select * from Nomina
  
-																																	  	
+UPDATE Empleado 
+set IdEmpresa = 104
+WHERE NoEmpleado = 1000;
+	
+																											  	
