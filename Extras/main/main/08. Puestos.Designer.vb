@@ -25,11 +25,9 @@ Partial Class Puestos
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Puestos))
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.TB_NSP = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.TB_NP = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
@@ -52,51 +50,33 @@ Partial Class Puestos
         Me.Button1.Text = "Atrás"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'ComboBox2
+        'TB_NSP
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(135, 120)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox2.TabIndex = 111
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(132, 104)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(96, 13)
-        Me.Label13.TabIndex = 110
-        Me.Label13.Text = "Gerente de Puesto"
-        '
-        'TextBox9
-        '
-        Me.TextBox9.Location = New System.Drawing.Point(118, 70)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(143, 20)
-        Me.TextBox9.TabIndex = 109
+        Me.TB_NSP.Location = New System.Drawing.Point(141, 85)
+        Me.TB_NSP.Name = "TB_NSP"
+        Me.TB_NSP.Size = New System.Drawing.Size(143, 20)
+        Me.TB_NSP.TabIndex = 109
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(42, 73)
+        Me.Label9.Location = New System.Drawing.Point(65, 88)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(71, 13)
         Me.Label9.TabIndex = 108
         Me.Label9.Text = "Nivel Salarial:"
         '
-        'TextBox5
+        'TB_NP
         '
-        Me.TextBox5.Location = New System.Drawing.Point(118, 37)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.ReadOnly = True
-        Me.TextBox5.Size = New System.Drawing.Size(164, 20)
-        Me.TextBox5.TabIndex = 107
+        Me.TB_NP.Location = New System.Drawing.Point(141, 52)
+        Me.TB_NP.Name = "TB_NP"
+        Me.TB_NP.Size = New System.Drawing.Size(164, 20)
+        Me.TB_NP.TabIndex = 107
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(68, 40)
+        Me.Label1.Location = New System.Drawing.Point(91, 55)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(47, 13)
         Me.Label1.TabIndex = 106
@@ -105,7 +85,7 @@ Partial Class Puestos
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(267, 73)
+        Me.Label2.Location = New System.Drawing.Point(290, 88)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(15, 13)
         Me.Label2.TabIndex = 114
@@ -119,11 +99,9 @@ Partial Class Puestos
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.ComboBox2)
-        Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.TextBox9)
+        Me.Controls.Add(Me.TB_NSP)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.TextBox5)
+        Me.Controls.Add(Me.TB_NP)
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Puestos"
@@ -135,11 +113,9 @@ Partial Class Puestos
 
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents Label13 As Label
-    Friend WithEvents TextBox9 As TextBox
+    Friend WithEvents TB_NSP As TextBox
     Friend WithEvents Label9 As Label
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents TB_NP As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
 End Class

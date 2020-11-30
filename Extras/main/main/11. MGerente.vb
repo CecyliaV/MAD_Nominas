@@ -29,7 +29,6 @@
             CreateEmpresa.Enabled = True
         Else
             CreateEmpresa.Enabled = False
-            CreateEmpresa.Visible = False
         End If
 
         IdEmpleado.Text = aux.Rows(0).Item("id").ToString
@@ -45,7 +44,16 @@
 
     End Sub
 
-    Private Sub CreateEmpleado_Click(sender As Object, e As EventArgs) Handles CreateEmpleado.Click
+    Private Sub CreateDep_Click(sender As Object, e As EventArgs) Handles CreateDep.Click
+        Me.Hide()
+        Form5.Show()
+
+    End Sub
+
+    Private Sub PuestosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PuestosToolStripMenuItem.Click
+
+        Me.Hide()
+        Puestos.Show()
 
     End Sub
 End Class

@@ -164,24 +164,22 @@ CREATE PROCEDURE sp_Puesto
 @Opc				CHAR(1),
 @Id				INT = null,
 @Nombre			VARCHAR(20) = null,
-@NivSalarial		DECIMAL(5,2),
-@NoEmpleados		INT,
-@IdDepartamento	INT
+@NivSalarial		DECIMAL(5,2)
 )
 AS
 BEGIN 
-if @Opc = 'I'
-BEGIN
-INSERT INTO Puesto(Nombre,NivSalarial ,NoEmpleados, IdDepartamento)
-VALUES (@Nombre,@NivSalarial, @NoEmpleados, @IdDepartamento)
-END
+	if @Opc = 'I'
+		BEGIN
+			INSERT INTO Puesto(Nombre,NivSalarial)
+			VALUES (@Nombre,@NivSalarial)
+		END
 
-IF @Opc = 'D'
-BEGIN
-DELETE 
-FROM Puesto
-WHERE IdPuesto = @Id
-END
+	IF @Opc = 'D'
+		BEGIN
+			DELETE 
+			FROM Puesto
+			WHERE IdPuesto = @Id
+		END
 
 END
 
@@ -288,40 +286,33 @@ BEGIN
 	select NoEmpleado 'id', Nombres 'Nombre', IdEmpresa 'Empresa', IdDepto 'Departamento', IdPuesto 'Puesto' from Empleado where NoEmpleado = @id
 END
 
-
-
---Conseguir un Id del gerente--
-IF EXISTS(SELECT 1 FROM sysobjects WHERE name = 'sp_GetIdGerente' AND type = 'P')	  --Tipo procedure
-DROP PROCEDURE sp_GetIdGerente;
+-- Percepciones
+IF EXISTS(SELECT 1 FROM sysobjects WHERE name = 'sp_Percep' AND type = 'P')	  --Tipo procedure
+DROP PROCEDURE sp_Percep;
 go
 
-CREATE PROCEDURE sp_GetIdGerente
+CREATE PROCEDURE sp_Percepc
 (
-   @Nombre			varchar(20)
+@Opc				CHAR(1),
+@Id				INT = null,
+@Nombre			VARCHAR(30) = null,
+@Valor			DECIMAL(11,2),
+@Porcentaje		tinyint
 )
 AS
-BEGIN
-	select NoEmpleado 'id' from Empleado where Nombres = @Nombre and Gerente = 1
-END
+BEGIN 
+	if @Opc = 'I'
+		BEGIN
+			INSERT INTO Percepciones(Nombre, Valor, Porcentaje)
+			VALUES (@Nombre, @Valor, @Porcentaje)
+		END
 
---Conseguir un Id del gerente--
-IF EXISTS(SELECT 1 FROM sysobjects WHERE name = 'sp_GetEmpresaGer' AND type = 'P')	  --Tipo procedure
-DROP PROCEDURE sp_GetEmpresaGer;
-go
-
-CREATE PROCEDURE sp_GetEmpresaGer
-(
-   @Nombre			varchar(20),
-   @Pass				varchar(20)
-)
-AS
-BEGIN
-SELECT
-
-E.Nombre as 'Empresa'
-from Empresa E
-JOIN Empleado D
-on E.IdEmpresa = D.IdEmpresa
-where D.Nombres = @Nombre and Gerente = 1 and Contraseña = @Pass
+	IF @Opc = 'D'
+		BEGIN
+			DELETE 
+			FROM Puesto
+			WHERE IdPuesto = @Id
+		END
 
 END
+

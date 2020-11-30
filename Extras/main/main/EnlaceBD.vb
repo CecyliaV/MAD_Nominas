@@ -170,6 +170,7 @@ Public Class EnlaceBD
 
         Return IdGerente
     End Function
+
     Public Function Get_GerenteInfo(ByVal Id As Integer) As DataTable
         Dim Qry As String
         Dim data As New DataTable
@@ -197,6 +198,7 @@ Public Class EnlaceBD
         Return data
 
     End Function
+
     Public Function AddEmpresaInfo(ByVal opc As String, ByVal Nombre As String, ByVal RS As String, ByVal Dom As String, ByVal RP As String, ByVal RFC As String,
                             ByVal fec As Date, ByVal email As String, ByVal tel As String, ByVal IdFrec As Integer, ByVal IdGerente As Integer
         ) As Boolean
@@ -264,30 +266,9 @@ Public Class EnlaceBD
 
     End Function
 
-    Public Function GetIdFrecandGer(ByVal nombre As String) As Integer
-        Dim data As New DataTable
-        Dim IdGerente As Integer
-
-        conectar()
-        comandosql = New SqlCommand("sp_GetIdGerente", conexion)
-        comandosql.CommandType = CommandType.StoredProcedure
-
-
-        Dim parametro1 As SqlParameter = comandosql.Parameters.Add("@Nombre", SqlDbType.VarChar, 20)
-        parametro1.Value = nombre
-
-
-        adaptador.SelectCommand = comandosql
-        adaptador.Fill(data)
-
-        If data.Rows IsNot Nothing AndAlso data.Rows.Count > 0 Then
-            IdGerente = data.Rows(0).Item("id")
-        End If
-
-        Return IdGerente
-    End Function
-
-    Public Function GetEmpresaName(ByVal nombre As String, ByVal contra As String) As String
+    Public Function AddDepartamento(ByVal opc As String, ByVal Nombre As String,
+                                    ByVal SueldoBase As Decimal, ByVal IdGerente As Integer) As Boolean
+        Dim fnd As Boolean = False
         Dim Qry As String
         Dim data As New DataTable
 
@@ -295,25 +276,82 @@ Public Class EnlaceBD
 
             conectar()
 
-            Qry = "sp_GetEmpresaGer"
+            Qry = "sp_Departamento"
             comandosql = New SqlCommand(Qry, conexion)
             comandosql.CommandType = CommandType.StoredProcedure
 
-            Dim parametro1 As SqlParameter = comandosql.Parameters.Add("@Nombre", SqlDbType.VarChar, 20)
-            parametro1.Value = nombre
 
-            Dim parametro2 As SqlParameter = comandosql.Parameters.Add("@Pass", SqlDbType.VarChar, 20)
-            parametro2.Value = contra
+            Dim parametro1 As SqlParameter = comandosql.Parameters.Add("@Opc", SqlDbType.VarChar, 1)
+            parametro1.Value = "I"
+            Dim parametro2 As SqlParameter = comandosql.Parameters.Add("@Nombre", SqlDbType.VarChar, 20)
+            If (Nombre = Nothing) Then
+                parametro2.Value = DBNull.Value
+            Else
+                parametro2.Value = Nombre
+            End If
+            Dim parametro3 As SqlParameter = comandosql.Parameters.Add("@SueldoBase", SqlDbType.Decimal, 13)
+            parametro3.Value = SueldoBase
+            Dim parametro4 As SqlParameter = comandosql.Parameters.Add("@IdGerente", SqlDbType.BigInt, 20)
+            If (IdGerente = Nothing) Then
+                parametro4.Value = DBNull.Value
+            Else
+                parametro4.Value = IdGerente
+            End If
+
 
             adaptador.SelectCommand = comandosql
             adaptador.Fill(data)
 
+            fnd = True
 
         Catch ex As SqlException
+            fnd = False
 
         Finally
             desconectar()
         End Try
+        Return fnd
+
+    End Function
+
+    Public Function AddPuesto(ByVal opc As String, ByVal Nombre As String,
+                                ByVal NivSalarial As Decimal) As Boolean
+        Dim fnd As Boolean = False
+        Dim Qry As String
+        Dim data As New DataTable
+
+        Try
+
+            conectar()
+
+            Qry = "sp_Puesto"
+            comandosql = New SqlCommand(Qry, conexion)
+            comandosql.CommandType = CommandType.StoredProcedure
+
+
+            Dim parametro1 As SqlParameter = comandosql.Parameters.Add("@Opc", SqlDbType.VarChar, 1)
+            parametro1.Value = "I"
+            Dim parametro2 As SqlParameter = comandosql.Parameters.Add("@Nombre", SqlDbType.VarChar, 20)
+            If (Nombre = Nothing) Then
+                parametro2.Value = DBNull.Value
+            Else
+                parametro2.Value = Nombre
+            End If
+            Dim parametro3 As SqlParameter = comandosql.Parameters.Add("@NivSalarial", SqlDbType.Decimal, 13)
+            parametro3.Value = NivSalarial
+
+            adaptador.SelectCommand = comandosql
+            adaptador.Fill(data)
+
+            fnd = True
+
+        Catch ex As SqlException
+            fnd = False
+
+        Finally
+            desconectar()
+        End Try
+        Return fnd
 
     End Function
 
