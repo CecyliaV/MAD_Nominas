@@ -69,6 +69,7 @@ Partial Class LogIn
         '
         Me.TBPass.Location = New System.Drawing.Point(146, 96)
         Me.TBPass.Name = "TBPass"
+        Me.TBPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
         Me.TBPass.Size = New System.Drawing.Size(148, 20)
         Me.TBPass.TabIndex = 6
         '

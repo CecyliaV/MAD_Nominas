@@ -543,5 +543,106 @@ Public Class EnlaceBD
 
     End Function
 
+    Public Function AddPercep(ByVal opc As String, ByVal Nombre As String,
+                            ByVal Valor As Decimal, ByVal Porcentaje As Byte) As Boolean
+        Dim fnd As Boolean = False
+        Dim Qry As String
+        Dim data As New DataTable
+
+        Try
+
+            conectar()
+
+            Qry = "sp_Percep"
+            comandosql = New SqlCommand(Qry, conexion)
+            comandosql.CommandType = CommandType.StoredProcedure
+
+
+            Dim parametro1 As SqlParameter = comandosql.Parameters.Add("@Opc", SqlDbType.VarChar, 1)
+            parametro1.Value = "I"
+            Dim parametro2 As SqlParameter = comandosql.Parameters.Add("@Nombre", SqlDbType.VarChar, 20)
+            If (Nombre = Nothing) Then
+                parametro2.Value = DBNull.Value
+            Else
+                parametro2.Value = Nombre
+            End If
+            Dim parametro3 As SqlParameter = comandosql.Parameters.Add("@Valor", SqlDbType.Decimal, 13)
+            If (Valor = Nothing) Then
+                parametro3.Value = DBNull.Value
+            Else
+                parametro3.Value = Valor
+            End If
+            Dim parametro4 As SqlParameter = comandosql.Parameters.Add("@Porcentaje", SqlDbType.TinyInt, 3)
+
+            If (Porcentaje = Nothing) Then
+                parametro4.Value = DBNull.Value
+            Else
+                parametro4.Value = Porcentaje
+            End If
+            adaptador.SelectCommand = comandosql
+            adaptador.Fill(data)
+
+            fnd = True
+
+        Catch ex As SqlException
+            fnd = False
+
+        Finally
+            desconectar()
+        End Try
+        Return fnd
+
+    End Function
+
+    Public Function AddDedu(ByVal opc As String, ByVal Nombre As String,
+                        ByVal Valor As Decimal, ByVal Porcentaje As Byte) As Boolean
+        Dim fnd As Boolean = False
+        Dim Qry As String
+        Dim data As New DataTable
+
+        Try
+
+            conectar()
+
+            Qry = "sp_Dedu"
+            comandosql = New SqlCommand(Qry, conexion)
+            comandosql.CommandType = CommandType.StoredProcedure
+
+
+            Dim parametro1 As SqlParameter = comandosql.Parameters.Add("@Opc", SqlDbType.VarChar, 1)
+            parametro1.Value = "I"
+            Dim parametro2 As SqlParameter = comandosql.Parameters.Add("@Nombre", SqlDbType.VarChar, 20)
+            If (Nombre = Nothing) Then
+                parametro2.Value = DBNull.Value
+            Else
+                parametro2.Value = Nombre
+            End If
+            Dim parametro3 As SqlParameter = comandosql.Parameters.Add("@Valor", SqlDbType.Decimal, 13)
+            If (Valor = Nothing) Then
+                parametro3.Value = DBNull.Value
+            Else
+                parametro3.Value = Valor
+            End If
+            Dim parametro4 As SqlParameter = comandosql.Parameters.Add("@Porcentaje", SqlDbType.TinyInt, 3)
+
+            If (Porcentaje = Nothing) Then
+                parametro4.Value = DBNull.Value
+            Else
+                parametro4.Value = Porcentaje
+            End If
+            adaptador.SelectCommand = comandosql
+            adaptador.Fill(data)
+
+            fnd = True
+
+        Catch ex As SqlException
+            fnd = False
+
+        Finally
+            desconectar()
+        End Try
+        Return fnd
+
+    End Function
 
 End Class

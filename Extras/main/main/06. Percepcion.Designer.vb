@@ -26,16 +26,18 @@ Partial Class Form6
         Me.Label1 = New System.Windows.Forms.Label()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TB_NPN = New System.Windows.Forms.TextBox()
+        Me.TB_NPP = New System.Windows.Forms.TextBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.TB_NPV = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(103, 38)
+        Me.Label1.Location = New System.Drawing.Point(91, 39)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(44, 13)
         Me.Label1.TabIndex = 0
@@ -44,7 +46,7 @@ Partial Class Form6
         'RadioButton1
         '
         Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(106, 83)
+        Me.RadioButton1.Location = New System.Drawing.Point(96, 84)
         Me.RadioButton1.Name = "RadioButton1"
         Me.RadioButton1.Size = New System.Drawing.Size(49, 17)
         Me.RadioButton1.TabIndex = 1
@@ -55,7 +57,7 @@ Partial Class Form6
         'RadioButton2
         '
         Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(106, 106)
+        Me.RadioButton2.Location = New System.Drawing.Point(96, 107)
         Me.RadioButton2.Name = "RadioButton2"
         Me.RadioButton2.Size = New System.Drawing.Size(76, 17)
         Me.RadioButton2.TabIndex = 2
@@ -63,19 +65,19 @@ Partial Class Form6
         Me.RadioButton2.Text = "Porcentaje"
         Me.RadioButton2.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'TB_NPN
         '
-        Me.TextBox1.Location = New System.Drawing.Point(154, 38)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(134, 20)
-        Me.TextBox1.TabIndex = 3
+        Me.TB_NPN.Location = New System.Drawing.Point(142, 39)
+        Me.TB_NPN.Name = "TB_NPN"
+        Me.TB_NPN.Size = New System.Drawing.Size(151, 20)
+        Me.TB_NPN.TabIndex = 3
         '
-        'TextBox2
+        'TB_NPP
         '
-        Me.TextBox2.Location = New System.Drawing.Point(188, 103)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 4
+        Me.TB_NPP.Location = New System.Drawing.Point(178, 107)
+        Me.TB_NPP.Name = "TB_NPP"
+        Me.TB_NPP.Size = New System.Drawing.Size(100, 20)
+        Me.TB_NPP.TabIndex = 4
         '
         'Button2
         '
@@ -95,15 +97,33 @@ Partial Class Form6
         Me.Button1.Text = "Atrás"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'TB_NPV
+        '
+        Me.TB_NPV.Location = New System.Drawing.Point(149, 81)
+        Me.TB_NPV.Name = "TB_NPV"
+        Me.TB_NPV.Size = New System.Drawing.Size(144, 20)
+        Me.TB_NPV.TabIndex = 108
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(280, 110)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(15, 13)
+        Me.Label2.TabIndex = 109
+        Me.Label2.Text = "%"
+        '
         'Form6
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(380, 199)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.TB_NPV)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TB_NPP)
+        Me.Controls.Add(Me.TB_NPN)
         Me.Controls.Add(Me.RadioButton2)
         Me.Controls.Add(Me.RadioButton1)
         Me.Controls.Add(Me.Label1)
@@ -118,8 +138,10 @@ Partial Class Form6
     Friend WithEvents Label1 As Label
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TB_NPN As TextBox
+    Friend WithEvents TB_NPP As TextBox
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents TB_NPV As TextBox
+    Friend WithEvents Label2 As Label
 End Class

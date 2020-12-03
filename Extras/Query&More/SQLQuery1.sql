@@ -282,7 +282,10 @@ select * from Empresa
 select * from Departamento
 select * from Puesto
 select * from Nomina
- 
+select * from Percepciones
+select * from Deducciones
+
+
 UPDATE Empleado 
 set IdEmpresa = 104
 WHERE NoEmpleado = 1000;

@@ -25,11 +25,13 @@ Partial Class Deducciones
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Deducciones))
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TB_NDV = New System.Windows.Forms.TextBox()
+        Me.TB_NDP = New System.Windows.Forms.TextBox()
+        Me.TB_NDN = New System.Windows.Forms.TextBox()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Button2
@@ -50,63 +52,81 @@ Partial Class Deducciones
         Me.Button1.Text = "Atrás"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'TextBox2
+        'Label2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(188, 103)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 112
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(280, 109)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(15, 13)
+        Me.Label2.TabIndex = 121
+        Me.Label2.Text = "%"
         '
-        'TextBox1
+        'TB_NDV
         '
-        Me.TextBox1.Location = New System.Drawing.Point(154, 38)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(134, 20)
-        Me.TextBox1.TabIndex = 111
+        Me.TB_NDV.Location = New System.Drawing.Point(149, 80)
+        Me.TB_NDV.Name = "TB_NDV"
+        Me.TB_NDV.Size = New System.Drawing.Size(144, 20)
+        Me.TB_NDV.TabIndex = 120
         '
-        'RadioButton2
+        'TB_NDP
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(106, 106)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(76, 17)
-        Me.RadioButton2.TabIndex = 110
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Porcentaje"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.TB_NDP.Location = New System.Drawing.Point(178, 106)
+        Me.TB_NDP.Name = "TB_NDP"
+        Me.TB_NDP.Size = New System.Drawing.Size(100, 20)
+        Me.TB_NDP.TabIndex = 119
         '
-        'RadioButton1
+        'TB_NDN
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(106, 83)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(49, 17)
-        Me.RadioButton1.TabIndex = 109
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Valor"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.TB_NDN.Location = New System.Drawing.Point(142, 38)
+        Me.TB_NDN.Name = "TB_NDN"
+        Me.TB_NDN.Size = New System.Drawing.Size(151, 20)
+        Me.TB_NDN.TabIndex = 118
         '
-        'Label1
+        'RadioButton3
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(103, 38)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(44, 13)
-        Me.Label1.TabIndex = 108
-        Me.Label1.Text = "Nombre"
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Location = New System.Drawing.Point(96, 106)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(76, 17)
+        Me.RadioButton3.TabIndex = 117
+        Me.RadioButton3.TabStop = True
+        Me.RadioButton3.Text = "Porcentaje"
+        Me.RadioButton3.UseVisualStyleBackColor = True
+        '
+        'RadioButton4
+        '
+        Me.RadioButton4.AutoSize = True
+        Me.RadioButton4.Location = New System.Drawing.Point(96, 83)
+        Me.RadioButton4.Name = "RadioButton4"
+        Me.RadioButton4.Size = New System.Drawing.Size(49, 17)
+        Me.RadioButton4.TabIndex = 116
+        Me.RadioButton4.TabStop = True
+        Me.RadioButton4.Text = "Valor"
+        Me.RadioButton4.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(91, 38)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(44, 13)
+        Me.Label3.TabIndex = 115
+        Me.Label3.Text = "Nombre"
         '
         'Deducciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(380, 200)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.TB_NDV)
+        Me.Controls.Add(Me.TB_NDP)
+        Me.Controls.Add(Me.TB_NDN)
+        Me.Controls.Add(Me.RadioButton3)
+        Me.Controls.Add(Me.RadioButton4)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.RadioButton2)
-        Me.Controls.Add(Me.RadioButton1)
-        Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Deducciones"
         Me.Text = "Deducciones"
@@ -117,9 +137,11 @@ Partial Class Deducciones
 
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton1 As RadioButton
-    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents TB_NDV As TextBox
+    Friend WithEvents TB_NDP As TextBox
+    Friend WithEvents TB_NDN As TextBox
+    Friend WithEvents RadioButton3 As RadioButton
+    Friend WithEvents RadioButton4 As RadioButton
+    Friend WithEvents Label3 As Label
 End Class

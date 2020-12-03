@@ -30,16 +30,18 @@
     End Sub
 
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Temp = New EnlaceBD
         Dim aux As DataTable
 
 
         name = LogIn.TBUser.Text
-            pass = LogIn.TBPass.Text
+        pass = LogIn.TBPass.Text
 
+        If sender Is GerenteForm.CreateEmpleado Then
             aux = Temp.GetEmpresaNom(name, pass)
             TBEmpresa.Text = aux.Rows(0).Item("Empresa").ToString
-
+        End If
 
 
 

@@ -67,4 +67,15 @@
         Puestos.Show()
 
     End Sub
+
+    Private Sub PercepcionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PercepcionesToolStripMenuItem.Click
+        Me.Hide()
+        Form6.Show()
+
+    End Sub
+
+    Private Sub DeduccionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeduccionesToolStripMenuItem.Click
+        Me.Hide()
+        Deducciones.Show()
+    End Sub
 End Class

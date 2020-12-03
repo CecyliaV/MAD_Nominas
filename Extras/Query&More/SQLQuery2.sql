@@ -350,7 +350,7 @@ IF EXISTS(SELECT 1 FROM sysobjects WHERE name = 'sp_Percep' AND type = 'P')     
 DROP PROCEDURE sp_Percep;
 go
 
-CREATE PROCEDURE sp_Percepc
+CREATE PROCEDURE sp_Percep
 (
 @Opc                CHAR(1),
 @Id                INT = null,
@@ -363,6 +363,36 @@ BEGIN
     if @Opc = 'I'
         BEGIN
             INSERT INTO Percepciones(Nombre, Valor, Porcentaje)
+            VALUES (@Nombre, @Valor, @Porcentaje)
+        END
+
+    IF @Opc = 'D'
+        BEGIN
+            DELETE 
+            FROM Puesto
+            WHERE IdPuesto = @Id
+        END
+
+END
+
+-- Deducciones
+IF EXISTS(SELECT 1 FROM sysobjects WHERE name = 'sp_Dedu' AND type = 'P')      --Tipo procedure
+DROP PROCEDURE sp_Dedu;
+go
+
+CREATE PROCEDURE sp_Dedu
+(
+@Opc                CHAR(1),
+@Id                INT = null,
+@Nombre            VARCHAR(30) = null,
+@Valor            DECIMAL(11,2),
+@Porcentaje        tinyint
+)
+AS
+BEGIN 
+    if @Opc = 'I'
+        BEGIN
+            INSERT INTO Deducciones(Nombre, Valor, Porcentaje)
             VALUES (@Nombre, @Valor, @Porcentaje)
         END
 
